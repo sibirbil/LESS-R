@@ -1,10 +1,11 @@
 Package: less
 Title: Regressor for Learning with Subset Selection (LESS)
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    c(person("Ilker", "Birbil", role = "aut", email = "s.i.birbil@uva.nl"),
+    person("Burhan Ozer", "Cavdar", role = c("aut", "trl", "cre"), email = "bcavdar17@ku.edu.tr"))
+Description: LESS is a supervised learning algorithm that is based on training many local estimators on subsets of a given dataset, 
+and then passing their predictions to a global estimator. You can find the details about LESS in our manuscript at https://arxiv.org/abs/2112.06251.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
