@@ -33,11 +33,11 @@ The base class for LESSRegressor and LESSClassifier
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="fit"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-fit'><code>less::SklearnEstimator$fit()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="predict"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-predict'><code>less::SklearnEstimator$predict()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="fit"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-fit'><code>less::SklearnEstimator$fit()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="predict"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-predict'><code>less::SklearnEstimator$predict()</code></a></span></li>
 </ul>
 </details>
 }}

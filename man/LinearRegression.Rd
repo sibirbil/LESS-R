@@ -57,11 +57,11 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></span></li>
 </ul>
 </details>
 }}

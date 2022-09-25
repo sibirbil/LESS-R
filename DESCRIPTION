@@ -8,7 +8,7 @@ Description: Learning with Subset Selection is a supervised learning algorithm t
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 Imports:
     caret,
     e1071,
