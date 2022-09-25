@@ -13,7 +13,7 @@
 #'   \item{Shell weight}{after being dried in grams}
 #'   \item{Rings}{+1.5 gives the age in years}
 #' }
-#' @source Dua, D. and Graff, C. (2019). UCI Machine Learning Repository \url{http://archive.ics.uci.edu/ml}. Irvine, CA: University of California, School of Information and Computer Science.
+#' @source Dua, D. and Graff, C. (2019). UCI Machine Learning Repository \url{http://archive.ics.uci.edu/ml/}. Irvine, CA: University of California, School of Information and Computer Science.
 #'
 #' @examples
 #' data(abalone)

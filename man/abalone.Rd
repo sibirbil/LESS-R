@@ -18,7 +18,7 @@ A dataframe with 4177 rows and 8 variables
 }
 }
 \source{
-Dua, D. and Graff, C. (2019). UCI Machine Learning Repository \url{http://archive.ics.uci.edu/ml}. Irvine, CA: University of California, School of Information and Computer Science.
+Dua, D. and Graff, C. (2019). UCI Machine Learning Repository \url{http://archive.ics.uci.edu/ml/}. Irvine, CA: University of California, School of Information and Computer Science.
 }
 \usage{
 abalone
