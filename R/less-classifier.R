@@ -463,19 +463,19 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                                   Switching to 'ovr' ...", private$warnings)
                                   }
                                 },
-                                update_params = function(first_estimator, n_classes){
+                                update_params = function(est, n_classes){
                                   # Parameters of the wrapper class are updated, since the functions
                                   # _set_local_attributes and _check_input may alter the following parameters
-                                  private$global_estimator <- first_estimator$get_global_estimator()
-                                  private$frac <- first_estimator$get_frac()
-                                  private$n_neighbors <- first_estimator$get_n_neighbors()
-                                  private$n_subsets <- first_estimator$get_n_subsets()
-                                  private$n_replications <- first_estimator$get_n_replications()
-                                  private$d_normalize <- first_estimator$get_d_normalize()
+                                  private$global_estimator <- est$get_global_estimator()
+                                  private$frac <- est$get_frac()
+                                  private$n_neighbors <- est$get_n_neighbors()
+                                  private$n_subsets <- est$get_n_subsets()
+                                  private$n_replications <- est$get_n_replications()
+                                  private$d_normalize <- est$get_d_normalize()
                                   # Replications are stored only if it is a binary classification problem
                                   # Otherwise, there are multiple binary classifiers, and hence, multiple replications
                                   if(n_classes == 2){
-                                    private$replications <- first_estimator$get_replications()
+                                    private$replications <- est$get_replications()
                                   }
                                 }
                               ),
@@ -513,7 +513,7 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                                                                  scaling = private$scaling, warnings = private$warnings)
                                 },
                                 #' @description
-                                #' Dummy fit function that calls the fit method of the multiclass strategy 'one-vs-rest'
+                                #' Dummy fit function that calls the fit method of the multiclass strategy
                                 #'
                                 #' @param X 2D matrix or dataframe that includes predictors
                                 #' @param y 1D vector or (n,1) dimensional matrix/dataframe that includes response variables
@@ -553,7 +553,7 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                   invisible(self)
                                 },
                                 #' @description
-                                #' Dummy predict function that calls the predict method of the multiclass strategy 'one-vs-rest'
+                                #' Dummy predict function that calls the predict method of the multiclass strategy
                                 #'
                                 #' @param X0 2D matrix or dataframe that includes predictors
                                 #'

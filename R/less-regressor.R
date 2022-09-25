@@ -80,6 +80,11 @@ LESSBase <- R6::R6Class(classname = "LESSBase",
                                    is.null(private$n_subsets)){
                             private$frac <- 0.05
                           }
+
+                          # When there is no global estimator, the scaling should be set to False
+                          if (is.null(self$global_estimator)){
+                            self$scaling <- FALSE
+                          }
                         },
 
                         check_input = function(len_X) {
