@@ -7,7 +7,7 @@
 R6 class of LESSRegressor
 }
 \description{
-Regressor for Learning with Subset Selection (LESS)
+Regressor for Learning with Subset Stacking (LESS)
 }
 \examples{
 

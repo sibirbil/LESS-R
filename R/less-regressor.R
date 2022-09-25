@@ -609,7 +609,7 @@ LESSBase <- R6::R6Class(classname = "LESSBase",
 
 #' @title  LESSRegressor
 #'
-#' @description Regressor for Learning with Subset Selection (LESS)
+#' @description Regressor for Learning with Subset Stacking (LESS)
 #'
 #' @param frac fraction of total samples used for the number of neighbors (default is 0.05)
 #' @param n_neighbors number of neighbors (default is NULL)

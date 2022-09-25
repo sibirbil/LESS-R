@@ -7,7 +7,7 @@
 R6 class of LESSBinaryClassifier
 }
 \description{
-Auxiliary binary classifier for Learning with Subset Selection (LESS)
+Auxiliary binary classifier for Learning with Subset Stacking (LESS)
 }
 \section{Super classes}{
 \code{\link[less:BaseEstimator]{less::BaseEstimator}} -> \code{\link[less:SklearnEstimator]{less::SklearnEstimator}} -> \code{\link[less:LESSBase]{less::LESSBase}} -> \code{LESSBinaryClassifier}

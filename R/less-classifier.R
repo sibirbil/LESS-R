@@ -191,7 +191,7 @@ OutputCodeClassifier <- R6::R6Class(classname = "OutputCodeClassifier",
                                     ))
 #' @title LESSBinaryClassifier
 #'
-#' @description Auxiliary binary classifier for Learning with Subset Selection (LESS)
+#' @description Auxiliary binary classifier for Learning with Subset Stacking (LESS)
 #'
 #' @param frac fraction of total samples used for the number of neighbors (default is 0.05)
 #' @param n_neighbors number of neighbors (default is NULL)
@@ -401,7 +401,7 @@ LESSBinaryClassifier <- R6::R6Class(classname = "LESSBinaryClassifier",
 
 #' @title LESSClassifier
 #'
-#' @description Classifier for Learning with Subset Selection (LESS)
+#' @description Classifier for Learning with Subset Stacking (LESS)
 #'
 #' @param frac fraction of total samples used for the number of neighbors (default is 0.05)
 #' @param n_neighbors number of neighbors (default is NULL)
@@ -522,7 +522,8 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #'
                                 #' @examples
                                 #' data(iris)
-                                #' split_list <- train_test_split(iris, test_size =  0.3)
+                                #' shuffled_iris <- iris[sample(1:nrow(iris)),]
+                                #' split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3)
                                 #' X_train <- split_list[[1]]
                                 #' X_test <- split_list[[2]]
                                 #' y_train <- split_list[[3]]
