@@ -81,9 +81,9 @@ LESSBase <- R6::R6Class(classname = "LESSBase",
                             private$frac <- 0.05
                           }
 
-                          # When there is no global estimator, the scaling should be set to False
-                          if (is.null(self$global_estimator)){
-                            self$scaling <- FALSE
+                          # When there is no global estimator, the scaling should be set to FALSE
+                          if (is.null(private$global_estimator)){
+                            private$scaling <- FALSE
                           }
                         },
 

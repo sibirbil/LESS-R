@@ -149,7 +149,7 @@ lessclassifier <- LESSClassifier$new(multiclass = "ovo")
 \if{html}{\out{<a id="method-LESSClassifier-fit"></a>}}
 \if{latex}{\out{\hypertarget{method-LESSClassifier-fit}{}}}
 \subsection{Method \code{fit()}}{
-Dummy fit function that calls the fit method of the multiclass strategy 'one-vs-rest'
+Dummy fit function that calls the fit method of the multiclass strategy
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{LESSClassifier$fit(X, y)}\if{html}{\out{</div>}}
 }
@@ -187,7 +187,7 @@ lessclassifier$fit(X_train, y_train)
 \if{html}{\out{<a id="method-LESSClassifier-predict"></a>}}
 \if{latex}{\out{\hypertarget{method-LESSClassifier-predict}{}}}
 \subsection{Method \code{predict()}}{
-Dummy predict function that calls the predict method of the multiclass strategy 'one-vs-rest'
+Dummy predict function that calls the predict method of the multiclass strategy
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{LESSClassifier$predict(X0)}\if{html}{\out{</div>}}
 }
