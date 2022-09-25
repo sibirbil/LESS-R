@@ -24,7 +24,7 @@ rf <- RandomForestRegressor$new(n_estimators = 500, random_state = 100)
 ## ------------------------------------------------
 
 data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -37,14 +37,7 @@ rf$fit(X_train, y_train)
 ## Method `RandomForestRegressor$predict`
 ## ------------------------------------------------
 
-rf <- RandomForestRegressor$new()
-rf$fit(X_train, y_train)
 preds <- rf$predict(X_test)
-
-rf <- RandomForestRegressor$new()
-preds <- rf$fit(X_train, y_train)$predict(X_test)
-
-preds <- RandomForestRegressor$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
 }
 \seealso{
@@ -140,7 +133,7 @@ Fitted R6 Class of RandomForestRegressor
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -175,14 +168,7 @@ The predict values.
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{rf <- RandomForestRegressor$new()
-rf$fit(X_train, y_train)
-preds <- rf$predict(X_test)
-
-rf <- RandomForestRegressor$new()
-preds <- rf$fit(X_train, y_train)$predict(X_test)
-
-preds <- RandomForestRegressor$new()$fit(X_train, y_train)$predict(X_test)
+\preformatted{preds <- rf$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
 }
 \if{html}{\out{</div>}}

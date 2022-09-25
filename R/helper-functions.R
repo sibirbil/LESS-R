@@ -336,10 +336,6 @@ get_functions = function(){
 #' @return A vector consists of metric of the individual folds and the average metric over the folds
 #'
 #' @export
-#'
-#' @examples
-#' k_fold_cv(data = abalone, model = LESSRegressor$new(), k = 10)
-#' k_fold_cv(data = iris, model = LESSClassifier$new(), k = 3)
 k_fold_cv = function(data = NULL, model = NULL, random_state = NULL, k = 5, y_index = ncol(data)){
   if(is.null(model) | is.null(data)){
     stop("The given data or model is NULL.")

@@ -36,8 +36,6 @@ lessclassifier$fit(X_train, y_train)
 ## Method `LESSClassifier$predict`
 ## ------------------------------------------------
 
-lessclassifier <- LESSClassifier$new()
-lessclassifier$fit(X_train, y_train)
 preds <- lessclassifier$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 }
@@ -204,9 +202,7 @@ Predicted values of the given predictors
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{lessclassifier <- LESSClassifier$new()
-lessclassifier$fit(X_train, y_train)
-preds <- lessclassifier$predict(X_test)
+\preformatted{preds <- lessclassifier$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 }
 \if{html}{\out{</div>}}

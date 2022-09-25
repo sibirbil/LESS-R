@@ -694,7 +694,7 @@ LESSRegressor <- R6::R6Class(classname = "LESSRegressor",
                                #'
                                #' @examples
                                #' data(abalone)
-                               #' split_list <- train_test_split(abalone, test_size =  0.3)
+                               #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                                #' X_train <- split_list[[1]]
                                #' X_test <- split_list[[2]]
                                #' y_train <- split_list[[3]]
@@ -744,14 +744,7 @@ LESSRegressor <- R6::R6Class(classname = "LESSRegressor",
                                #' @return Predicted values of the given predictors
                                #'
                                #' @examples
-                               #' lessRegressor <- LESSRegressor$new()
-                               #' lessRegressor$fit(X_train, y_train)
                                #' preds <- lessRegressor$predict(X_test)
-                               #'
-                               #' lessRegressor <- LESSRegressor$new()
-                               #' preds <- lessRegressor$fit(X_train, y_train)$predict(X_test)
-                               #'
-                               #' preds <- LESSRegressor$new()$fit(X_train, y_train)$predict(X_test)
                                #' print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
                                predict = function(X0) {
 

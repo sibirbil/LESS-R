@@ -20,7 +20,7 @@ Templated code from \url{https://hunch.net/~jl/projects/cover_tree/cover_tree.ht
 ## ------------------------------------------------
 
 data(abalone)
-ct <- CoverTree$new(abalone)
+ct <- CoverTree$new(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `CoverTree$query`
@@ -59,7 +59,7 @@ Creates a new instance of R6 Class of CoverTree
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-ct <- CoverTree$new(abalone)
+ct <- CoverTree$new(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 

@@ -25,7 +25,7 @@ lessRegressor <- LESSRegressor$new(val_size = 0.3, cluster_method = less::KMeans
 ## ------------------------------------------------
 
 data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -38,14 +38,7 @@ lessRegressor$fit(X_train, y_train)
 ## Method `LESSRegressor$predict`
 ## ------------------------------------------------
 
-lessRegressor <- LESSRegressor$new()
-lessRegressor$fit(X_train, y_train)
 preds <- lessRegressor$predict(X_test)
-
-lessRegressor <- LESSRegressor$new()
-preds <- lessRegressor$fit(X_train, y_train)$predict(X_test)
-
-preds <- LESSRegressor$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
 }
 \seealso{
@@ -185,7 +178,7 @@ Fitted R6 Class of LESSRegressor
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -220,14 +213,7 @@ Predicted values of the given predictors
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{lessRegressor <- LESSRegressor$new()
-lessRegressor$fit(X_train, y_train)
-preds <- lessRegressor$predict(X_test)
-
-lessRegressor <- LESSRegressor$new()
-preds <- lessRegressor$fit(X_train, y_train)$predict(X_test)
-
-preds <- LESSRegressor$new()$fit(X_train, y_train)$predict(X_test)
+\preformatted{preds <- lessRegressor$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
 }
 \if{html}{\out{</div>}}

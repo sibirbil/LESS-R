@@ -25,7 +25,7 @@ hc <- HierarchicalClustering$new(n_clusters = 10, linkage = "complete")
 
 data(abalone)
 hc <- HierarchicalClustering$new()
-hc$fit(abalone)
+hc$fit(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `HierarchicalClustering$get_cluster_centers`
@@ -118,7 +118,7 @@ Fitted R6 class of HierarchicalClustering() that has 'labels' attribute
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
 hc <- HierarchicalClustering$new()
-hc$fit(abalone)
+hc$fit(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 

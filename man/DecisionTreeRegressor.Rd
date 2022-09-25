@@ -24,7 +24,7 @@ dt <- DecisionTreeRegressor$new(min_samples_leaf = 6, cp = 0.01)
 ## ------------------------------------------------
 
 data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -147,7 +147,7 @@ Fitted R6 Class of DecisionTreeRegressor
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]

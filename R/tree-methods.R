@@ -17,7 +17,7 @@ KDTree <- R6::R6Class(classname = "KDTree",
                         #'
                         #' @examples
                         #' data(abalone)
-                        #' kdt <- KDTree$new(abalone)
+                        #' kdt <- KDTree$new(abalone[1:100,])
                         initialize = function(X = NULL) {
                           private$X = X
                         },
@@ -65,7 +65,7 @@ CoverTree <- R6::R6Class(classname = "CoverTree",
                            #'
                            #' @examples
                            #' data(abalone)
-                           #' ct <- CoverTree$new(abalone)
+                           #' ct <- CoverTree$new(abalone[1:100,])
                            initialize = function(X = NULL) {
                              private$X = X
                            },

@@ -560,8 +560,6 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #' @return Predicted values of the given predictors
                                 #'
                                 #' @examples
-                                #' lessclassifier <- LESSClassifier$new()
-                                #' lessclassifier$fit(X_train, y_train)
                                 #' preds <- lessclassifier$predict(X_test)
                                 #' print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
                                 predict = function(X0){

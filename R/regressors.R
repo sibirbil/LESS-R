@@ -131,7 +131,7 @@ LinearRegression <- R6::R6Class(classname = "LinearRegression",
                                   #'
                                   #' @examples
                                   #' data(abalone)
-                                  #' split_list <- train_test_split(abalone, test_size =  0.3)
+                                  #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                                   #' X_train <- split_list[[1]]
                                   #' X_test <- split_list[[2]]
                                   #' y_train <- split_list[[3]]
@@ -230,7 +230,7 @@ DecisionTreeRegressor <- R6::R6Class(classname = "DecisionTreeRegressor",
                                        #'
                                        #' @examples
                                        #' data(abalone)
-                                       #' split_list <- train_test_split(abalone, test_size =  0.3)
+                                       #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                                        #' X_train <- split_list[[1]]
                                        #' X_test <- split_list[[2]]
                                        #' y_train <- split_list[[3]]
@@ -326,7 +326,7 @@ RandomForestRegressor <- R6::R6Class(classname = "RandomForestRegressor",
                                        #'
                                        #' @examples
                                        #' data(abalone)
-                                       #' split_list <- train_test_split(abalone, test_size =  0.3)
+                                       #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                                        #' X_train <- split_list[[1]]
                                        #' X_test <- split_list[[2]]
                                        #' y_train <- split_list[[3]]
@@ -350,14 +350,7 @@ RandomForestRegressor <- R6::R6Class(classname = "RandomForestRegressor",
                                        #' @return The predict values.
                                        #'
                                        #' @examples
-                                       #' rf <- RandomForestRegressor$new()
-                                       #' rf$fit(X_train, y_train)
                                        #' preds <- rf$predict(X_test)
-                                       #'
-                                       #' rf <- RandomForestRegressor$new()
-                                       #' preds <- rf$fit(X_train, y_train)$predict(X_test)
-                                       #'
-                                       #' preds <- RandomForestRegressor$new()$fit(X_train, y_train)$predict(X_test)
                                        #' print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
                                        predict = function(X0){
                                          check_is_fitted(self)
@@ -405,7 +398,7 @@ KNeighborsRegressor <- R6::R6Class(classname = "KNeighborsRegressor",
                                      #'
                                      #' @examples
                                      #' data(abalone)
-                                     #' split_list <- train_test_split(abalone, test_size =  0.3)
+                                     #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                                      #' X_train <- split_list[[1]]
                                      #' X_test <- split_list[[2]]
                                      #' y_train <- split_list[[3]]
@@ -522,7 +515,7 @@ SVR <- R6::R6Class(classname = "SVR",
                      #'
                      #' @examples
                      #' data(abalone)
-                     #' split_list <- train_test_split(abalone, test_size =  0.3)
+                     #' split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
                      #' X_train <- split_list[[1]]
                      #' X_test <- split_list[[2]]
                      #' y_train <- split_list[[3]]

@@ -25,7 +25,7 @@ km <- KMeans$new(n_clusters = 10, random_state = 100)
 
 data(abalone)
 km <- KMeans$new()
-km$fit(abalone)
+km$fit(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `KMeans$get_cluster_centers`
@@ -120,7 +120,7 @@ Fitted R6 class of KMeans() that has 'cluster_centers' and 'labels' attributes
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
 km <- KMeans$new()
-km$fit(abalone)
+km$fit(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 
