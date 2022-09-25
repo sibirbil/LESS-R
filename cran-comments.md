@@ -40,7 +40,7 @@ Examples with CPU (user + system) or elapsed time > 10s
                 user system elapsed
 LESSClassifier 12.45   0.08   12.58
 
-  The example of the LESSClassifier is made smaller.
+  The example of LESSClassifier is made smaller.
 
 
 

@@ -23,8 +23,9 @@ lessclassifier <- LESSClassifier$new(multiclass = "ovo")
 ## ------------------------------------------------
 
 data(iris)
+set.seed(2022)
 shuffled_iris <- iris[sample(1:nrow(iris)),]
-split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3)
+split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3, random_state = 1)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -168,8 +169,9 @@ Fitted R6 Class of LESSClassifier
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(iris)
+set.seed(2022)
 shuffled_iris <- iris[sample(1:nrow(iris)),]
-split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3)
+split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3, random_state = 1)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
