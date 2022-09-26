@@ -8,7 +8,7 @@
 illustrate the use of the exported function but also enable automatic
 testing.
   
-  Corresponding examples are added to those exported functions with no examples
+  Small examples are added to those exported functions with no examples using roxygen2
   
 > You write information messages to the console that cannot be easily
 suppressed... e.g.:  R/helper-classes.R ; R/helper-functions.R

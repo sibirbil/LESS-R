@@ -16,13 +16,17 @@ A dummy base R6 class that includes fit, predict functions for estimators
 ## ------------------------------------------------
 
 sklearn <- SklearnEstimator$new()
+\dontrun{
 sklearn$fit()
+}
 
 ## ------------------------------------------------
 ## Method `SklearnEstimator$predict`
 ## ------------------------------------------------
 
+\dontrun{
 sklearn$predict()
+}
 
 ## ------------------------------------------------
 ## Method `SklearnEstimator$get_type`
@@ -70,7 +74,9 @@ Dummy fit function
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{sklearn <- SklearnEstimator$new()
+\dontrun{
 sklearn$fit()
+}
 }
 \if{html}{\out{</div>}}
 
@@ -88,7 +94,9 @@ Dummy predict function
 
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{sklearn$predict()
+\preformatted{\dontrun{
+sklearn$predict()
+}
 }
 \if{html}{\out{</div>}}
 

@@ -80,14 +80,18 @@ SklearnEstimator <- R6::R6Class(classname = "SklearnEstimator",
                                   #'
                                   #' @examples
                                   #' sklearn <- SklearnEstimator$new()
+                                  #' \dontrun{
                                   #' sklearn$fit()
+                                  #' }
                                   fit = function() {
                                     stop("Needs to implement fit(X, y)")
                                   },
                                   #' @description Dummy predict function
                                   #'
                                   #' @examples
+                                  #' \dontrun{
                                   #' sklearn$predict()
+                                  #' }
                                   predict = function(){
                                     stop("Needs to implement predict(X, y)")
                                     invisible(self)
