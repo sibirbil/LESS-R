@@ -9,6 +9,28 @@ R6 Class of BaseEstimator
 \description{
 A dummy base R6 class that provides get_all_fields, get_attributes and set_random_state functionalities for estimators
 }
+\examples{
+
+## ------------------------------------------------
+## Method `BaseEstimator$get_all_fields`
+## ------------------------------------------------
+
+TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+exampleClass <- TestClass$new()
+exampleClass$get_all_fields()
+
+## ------------------------------------------------
+## Method `BaseEstimator$get_attributes`
+## ------------------------------------------------
+
+exampleClass$get_attributes()
+
+## ------------------------------------------------
+## Method `BaseEstimator$set_random_state`
+## ------------------------------------------------
+
+exampleClass$set_random_state(2022)
+}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
@@ -27,6 +49,16 @@ Auxiliary function returning the name of all private and public fields of the se
 \if{html}{\out{<div class="r">}}\preformatted{BaseEstimator$get_all_fields()}\if{html}{\out{</div>}}
 }
 
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+exampleClass <- TestClass$new()
+exampleClass$get_all_fields()
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-BaseEstimator-get_attributes"></a>}}
@@ -35,6 +67,14 @@ Auxiliary function returning the name of all private and public fields of the se
 Auxiliary function returning the name and values of all private and public fields of the self class
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{BaseEstimator$get_attributes()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{exampleClass$get_attributes()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }
@@ -57,6 +97,14 @@ Auxiliary function that sets random state attribute of the self class
 \subsection{Returns}{
 self
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{exampleClass$set_random_state(2022)
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-BaseEstimator-clone"></a>}}

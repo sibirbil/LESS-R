@@ -1,5 +1,29 @@
 ### Resubmission
 
+> Please write full names in the "Authors" and "Maintainer" field.
+
+  The maintainer's name is written explicitly as Burhan Ozer Cavdar
+  
+> Please add a few small executable examples in your Rd-files to
+illustrate the use of the exported function but also enable automatic
+testing.
+  
+  Corresponding examples are added to those exported functions with no examples
+  
+> You write information messages to the console that cannot be easily
+suppressed... e.g.:  R/helper-classes.R ; R/helper-functions.R
+  
+  All print/cat functions are removed in R/helper-classes.R and R/helper-functions.R
+  
+> Please make sure that you do not change the user's options, par or
+working directory... e.g.: R/tutorial.R
+  
+  Functions with par() are corrected by using on.exit() function. So, user's options are reset
+  when the function is exited.
+  
+  
+### Resubmission
+
 > License components with restrictions and base license permitting such:
   MIT + file LICENSE
 File 'LICENSE':
@@ -41,8 +65,7 @@ Examples with CPU (user + system) or elapsed time > 10s
 LESSClassifier 12.45   0.08   12.58
 
   The example of LESSClassifier is made smaller.
-
-
+  
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 

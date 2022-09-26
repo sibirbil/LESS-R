@@ -17,3 +17,8 @@ A named dataframe which consists of X and y combined
 \description{
 Takes X and y datasets and merges them into a dataframe with column names (y, X_1, X_2 ...)
 }
+\examples{
+X <- matrix(1:20, nrow = 4)
+y <- c(5:8)
+prepareDataset(X, y)
+}

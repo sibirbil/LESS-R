@@ -45,6 +45,12 @@ preds <- svr$fit(X_train, y_train)$predict(X_test)
 
 preds <- SVR$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `SVR$get_estimator_type`
+## ------------------------------------------------
+
+svr$get_estimator_type()
 }
 \seealso{
 \code{\link[e1071:svm]{e1071::svm()}}
@@ -221,6 +227,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SVR$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{svr$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

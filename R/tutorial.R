@@ -11,7 +11,16 @@
 #' @importFrom graphics par
 #'
 #' @export
+#'
+#' @examples
+#' sine_data_list <- synthetic_sine_curve()
+#' X_sine <- sine_data_list[[1]]
+#' y_sine <- sine_data_list[[2]]
 synthetic_sine_curve = function(n_samples=200) {
+  # restore par options on the exit of the function
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
+
   xvals <- seq(-10,10,length.out=n_samples+1)[-(n_samples+1)]
 
   X <- rep(0, n_samples)
@@ -30,7 +39,7 @@ synthetic_sine_curve = function(n_samples=200) {
   return(list(X, y))
 }
 
-#' @title Comparsion Plot
+#' @title Comparison Plot
 #'
 #' @description Plots the fitted functions obtained with various regressors (using their default values) on the
 #' one-dimensional dataset (X, y).
@@ -41,7 +50,20 @@ synthetic_sine_curve = function(n_samples=200) {
 #'
 #' @importFrom graphics par
 #' @export
+#'
+#' @examples
+#' sine_data_list <- less::synthetic_sine_curve()
+#' X_sine <- sine_data_list[[1]]
+#' y_sine <- sine_data_list[[2]]
+#'
+#' model_list <- c(DecisionTreeRegressor$new(), LinearRegression$new(), KNeighborsRegressor$new())
+#'
+#' comparison_plot(X_sine, y_sine, model_list)
 comparison_plot = function(X, y, model_list){
+  # restore par options on the exit of the function
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
+
   xlb <- floor(min(X)-1)
   xub <- floor(max(X)+1)
   xvals <- seq(xlb, xub, by=0.1)
@@ -108,6 +130,11 @@ speed_test_classifiers = function(X, y){
 #' @importFrom graphics barplot
 #'
 #' @export
+#'
+#' @examples
+#' X <- matrix(sample(100, 20), nrow = 10)
+#' y <- sample(100, 10)
+#' test_timing(1, X, y)
 test_timing = function(type = 1, X, y){
  if(type == 1){
    timings <- speed_test_regressors(X, y)
@@ -129,3 +156,4 @@ test_timing = function(type = 1, X, y){
            names.arg = names(timings))
  }
 }
+

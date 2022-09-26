@@ -29,3 +29,6 @@ A vector consists of metric of the individual folds and the average metric over 
 \description{
 Applies k-Fold cross validation to the given model on the given data
 }
+\examples{
+k_fold_cv(data = iris, model = KNeighborsClassifier$new(), k = 3)
+}

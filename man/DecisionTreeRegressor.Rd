@@ -46,6 +46,12 @@ preds <- dt$fit(X_train, y_train)$predict(X_test)
 
 preds <- DecisionTreeRegressor$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `DecisionTreeRegressor$get_estimator_type`
+## ------------------------------------------------
+
+dt$get_estimator_type()
 }
 \seealso{
 \code{\link[rpart:rpart]{rpart::rpart()}}
@@ -204,6 +210,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DecisionTreeRegressor$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{dt$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

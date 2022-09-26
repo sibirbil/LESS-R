@@ -808,6 +808,9 @@ LESSRegressor <- R6::R6Class(classname = "LESSRegressor",
                                  return(yhat)
                                },
                                #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                               #'
+                               #' @examples
+                               #' lessRegressor$get_estimator_type()
                                get_estimator_type = function() {
                                  return(private$estimator_type)
                                }

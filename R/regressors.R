@@ -32,10 +32,18 @@ BaseEstimator <- R6::R6Class(classname = "BaseEstimator",
                              ),
                              public = list(
                                #' @description Auxiliary function returning the name of all private and public fields of the self class
+                               #'
+                               #' @examples
+                               #' TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+                               #' exampleClass <- TestClass$new()
+                               #' exampleClass$get_all_fields()
                                get_all_fields = function(){
                                  return(append(private$priv_fields(), private$public_fields()))
                                },
                                #' @description Auxiliary function returning the name and values of all private and public fields of the self class
+                               #'
+                               #' @examples
+                               #' exampleClass$get_attributes()
                                get_attributes = function(){
                                  priv_values <- purrr::map(private$priv_fields(), ~.subset2(private, .x))
                                  public_values <- purrr::map(private$public_fields(), ~.subset2(self, .x))
@@ -47,6 +55,9 @@ BaseEstimator <- R6::R6Class(classname = "BaseEstimator",
                                #'
                                #' @param random_state seed number to be set as random state
                                #' @return self
+                               #'
+                               #' @examples
+                               #' exampleClass$set_random_state(2022)
                                set_random_state = function(random_state){
                                  private$random_state <- random_state
                                  invisible(self)
@@ -66,19 +77,32 @@ SklearnEstimator <- R6::R6Class(classname = "SklearnEstimator",
                                 ),
                                 public = list(
                                   #' @description Dummy fit function
+                                  #'
+                                  #' @examples
+                                  #' sklearn <- SklearnEstimator$new()
+                                  #' sklearn$fit()
                                   fit = function() {
                                     stop("Needs to implement fit(X, y)")
                                   },
                                   #' @description Dummy predict function
+                                  #'
+                                  #' @examples
+                                  #' sklearn$predict()
                                   predict = function(){
                                     stop("Needs to implement predict(X, y)")
                                     invisible(self)
                                   },
                                   #' @description Auxiliary function returning the type of the class e.g 'estimator'
+                                  #'
+                                  #' @examples
+                                  #' sklearn$get_type()
                                   get_type = function(){
                                     return(private$type)
                                   },
                                   #' @description Auxiliary function returning the isFitted flag
+                                  #'
+                                  #' @examples
+                                  #' sklearn$get_isFitted()
                                   get_isFitted = function(){
                                     return(private$isFitted)
                                   }
@@ -168,6 +192,9 @@ LinearRegression <- R6::R6Class(classname = "LinearRegression",
                                     suppressWarnings(predict(private$model, newdata = data))
                                   },
                                   #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                  #'
+                                  #' @examples
+                                  #' lr$get_estimator_type()
                                   get_estimator_type = function() {
                                     return(private$estimator_type)
                                   }
@@ -271,6 +298,9 @@ DecisionTreeRegressor <- R6::R6Class(classname = "DecisionTreeRegressor",
                                          predict(private$model, data, method = "anova")
                                        },
                                        #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                       #'
+                                       #' @examples
+                                       #' dt$get_estimator_type()
                                        get_estimator_type = function() {
                                          return(private$estimator_type)
                                        }
@@ -358,6 +388,9 @@ RandomForestRegressor <- R6::R6Class(classname = "RandomForestRegressor",
                                          predict(private$model, data)
                                        },
                                        #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                       #'
+                                       #' @examples
+                                       #' rf$get_estimator_type()
                                        get_estimator_type = function() {
                                          return(private$estimator_type)
                                        }
@@ -434,6 +467,9 @@ KNeighborsRegressor <- R6::R6Class(classname = "KNeighborsRegressor",
                                        predict(private$model, data)
                                      },
                                      #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                     #'
+                                     #' @examples
+                                     #' knr$get_estimator_type()
                                      get_estimator_type = function() {
                                        return(private$estimator_type)
                                      }
@@ -556,6 +592,9 @@ SVR <- R6::R6Class(classname = "SVR",
                        predict(private$model, data)
                      },
                      #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                     #'
+                     #' @examples
+                     #' svr$get_estimator_type()
                      get_estimator_type = function() {
                        return(private$estimator_type)
                      }

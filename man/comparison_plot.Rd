@@ -2,7 +2,7 @@
 % Please edit documentation in R/tutorial.R
 \name{comparison_plot}
 \alias{comparison_plot}
-\title{Comparsion Plot}
+\title{Comparison Plot}
 \usage{
 comparison_plot(X, y, model_list)
 }
@@ -16,4 +16,13 @@ comparison_plot(X, y, model_list)
 \description{
 Plots the fitted functions obtained with various regressors (using their default values) on the
 one-dimensional dataset (X, y).
+}
+\examples{
+sine_data_list <- less::synthetic_sine_curve()
+X_sine <- sine_data_list[[1]]
+y_sine <- sine_data_list[[2]]
+
+model_list <- c(DecisionTreeRegressor$new(), LinearRegression$new(), KNeighborsRegressor$new())
+
+comparison_plot(X_sine, y_sine, model_list)
 }

@@ -38,6 +38,12 @@ preds <- lr$fit(X_train, y_train)$predict(X_test)
 
 preds <- LinearRegression$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `LinearRegression$get_estimator_type`
+## ------------------------------------------------
+
+lr$get_estimator_type()
 }
 \seealso{
 \code{\link[stats:lm]{stats::lm()}}
@@ -146,6 +152,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{LinearRegression$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lr$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

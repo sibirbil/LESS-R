@@ -46,6 +46,12 @@ preds <- rf$fit(X_train, y_train)$predict(X_test)
 
 preds <- RandomForestClassifier$new()$fit(X_train, y_train)$predict(X_test)
 print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `RandomForestClassifier$get_estimator_type`
+## ------------------------------------------------
+
+rf$get_estimator_type()
 }
 \seealso{
 \code{\link[randomForest:randomForest]{randomForest::randomForest()}}
@@ -197,6 +203,14 @@ print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RandomForestClassifier$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{rf$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

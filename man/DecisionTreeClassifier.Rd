@@ -46,6 +46,12 @@ preds <- dt$fit(X_train, y_train)$predict(X_test)
 
 preds <- DecisionTreeClassifier$new()$fit(X_train, y_train)$predict(X_test)
 print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `DecisionTreeClassifier$get_estimator_type`
+## ------------------------------------------------
+
+dt$get_estimator_type()
 }
 \seealso{
 \code{\link[rpart:rpart]{rpart::rpart()}}
@@ -204,6 +210,14 @@ print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DecisionTreeClassifier$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{dt$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

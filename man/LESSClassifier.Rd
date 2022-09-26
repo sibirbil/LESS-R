@@ -40,6 +40,18 @@ lessclassifier$fit(X_train, y_train)
 
 preds <- lessclassifier$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `LESSClassifier$get_estimator_type`
+## ------------------------------------------------
+
+lessclassifier$get_estimator_type()
+
+## ------------------------------------------------
+## Method `LESSClassifier$set_random_state`
+## ------------------------------------------------
+
+lessclassifier$set_random_state(2022)
 }
 \section{Super classes}{
 \code{\link[less:BaseEstimator]{less::BaseEstimator}} -> \code{\link[less:SklearnEstimator]{less::SklearnEstimator}} -> \code{\link[less:LESSBase]{less::LESSBase}} -> \code{LESSClassifier}
@@ -223,6 +235,14 @@ Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \if{html}{\out{<div class="r">}}\preformatted{LESSClassifier$get_estimator_type()}\if{html}{\out{</div>}}
 }
 
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lessclassifier$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LESSClassifier-set_random_state"></a>}}
@@ -243,6 +263,14 @@ Auxiliary function that sets random state attribute of the self class
 \subsection{Returns}{
 self
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lessclassifier$set_random_state(2022)
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LESSClassifier-clone"></a>}}

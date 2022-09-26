@@ -45,6 +45,12 @@ preds <- knr$fit(X_train, y_train)$predict(X_test)
 
 preds <- KNeighborsRegressor$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `KNeighborsRegressor$get_estimator_type`
+## ------------------------------------------------
+
+knr$get_estimator_type()
 }
 \seealso{
 \code{\link[caret:knnreg]{caret::knnreg()}}
@@ -180,6 +186,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{KNeighborsRegressor$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{knr$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

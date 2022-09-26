@@ -572,6 +572,9 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                   private$strategy$predict(X0)
                                 },
                                 #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                #'
+                                #' @examples
+                                #' lessclassifier$get_estimator_type()
                                 get_estimator_type = function() {
                                   return(private$estimator_type)
                                 },
@@ -579,6 +582,9 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #'
                                 #' @param random_state seed number to be set as random state
                                 #' @return self
+                                #'
+                                #' @examples
+                                #' lessclassifier$set_random_state(2022)
                                 set_random_state = function(random_state) {
                                   private$random_state <- random_state
                                   private$bclassifier$set_random_state(private$random_state)

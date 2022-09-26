@@ -17,3 +17,8 @@ test_timing(type = 1, X, y)
 Plots a histogram chart which shows the fitting time obtained from various regressors/classifiers (using their default values) on the
 given dataset (X, y).
 }
+\examples{
+X <- matrix(sample(100, 20), nrow = 10)
+y <- sample(100, 10)
+test_timing(1, X, y)
+}

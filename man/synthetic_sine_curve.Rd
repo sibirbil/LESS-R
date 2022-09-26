@@ -13,3 +13,8 @@ synthetic_sine_curve(n_samples = 200)
 A simple function to generate n_samples from sine curve in the range (-10, 10) with some amplitude.
 The function returns the dataset (X, y), and plots the function (curve) along with the dataset (circles)
 }
+\examples{
+sine_data_list <- synthetic_sine_curve()
+X_sine <- sine_data_list[[1]]
+y_sine <- sine_data_list[[2]]
+}

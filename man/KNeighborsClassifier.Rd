@@ -45,6 +45,12 @@ preds <- knc$fit(X_train, y_train)$predict(X_test)
 
 preds <- KNeighborsClassifier$new()$fit(X_train, y_train)$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `KNeighborsClassifier$get_estimator_type`
+## ------------------------------------------------
+
+knc$get_estimator_type()
 }
 \seealso{
 \code{\link[caret:knn3]{caret::knn3()}}
@@ -180,6 +186,14 @@ print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{KNeighborsClassifier$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{knc$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

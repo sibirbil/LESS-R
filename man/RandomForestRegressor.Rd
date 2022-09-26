@@ -39,6 +39,12 @@ rf$fit(X_train, y_train)
 
 preds <- rf$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `RandomForestRegressor$get_estimator_type`
+## ------------------------------------------------
+
+rf$get_estimator_type()
 }
 \seealso{
 \code{\link[randomForest:randomForest]{randomForest::randomForest()}}
@@ -183,6 +189,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{RandomForestRegressor$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{rf$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }
