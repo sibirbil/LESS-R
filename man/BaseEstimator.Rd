@@ -15,7 +15,9 @@ A dummy base R6 class that provides get_all_fields, get_attributes and set_rando
 ## Method `BaseEstimator$get_all_fields`
 ## ------------------------------------------------
 
-TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+TestClass <- R6::R6Class(classname = "TestClass",
+inherit = BaseEstimator,
+private = list(random_state = NULL))
 exampleClass <- TestClass$new()
 exampleClass$get_all_fields()
 
@@ -51,7 +53,9 @@ Auxiliary function returning the name of all private and public fields of the se
 
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+\preformatted{TestClass <- R6::R6Class(classname = "TestClass",
+inherit = BaseEstimator,
+private = list(random_state = NULL))
 exampleClass <- TestClass$new()
 exampleClass$get_all_fields()
 }

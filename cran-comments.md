@@ -1,5 +1,22 @@
 ### Resubmission
 
+> \dontrun{} should only be used if the example really cannot be executed
+(e.g. because of missing additional software, missing API keys, ...) by
+the user... e.g.: SklearnEstimator.Rd
+
+  "dontrun{}" wrappings are removed.
+
+
+### Resubmission
+
+> * checking Rd line widths ... NOTE
+Rd file 'BaseEstimator.Rd':
+  \examples lines wider than 100 characters:
+
+  The wide line is shortened.
+
+### Resubmission
+
 > Please write full names in the "Authors" and "Maintainer" field.
 
   The maintainer's name is written explicitly as Burhan Ozer Cavdar

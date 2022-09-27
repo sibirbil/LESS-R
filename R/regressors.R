@@ -34,7 +34,9 @@ BaseEstimator <- R6::R6Class(classname = "BaseEstimator",
                                #' @description Auxiliary function returning the name of all private and public fields of the self class
                                #'
                                #' @examples
-                               #' TestClass <- R6::R6Class(classname = "TestClass", inherit = BaseEstimator, private = list(random_state = NULL))
+                               #' TestClass <- R6::R6Class(classname = "TestClass",
+                               #' inherit = BaseEstimator,
+                               #' private = list(random_state = NULL))
                                #' exampleClass <- TestClass$new()
                                #' exampleClass$get_all_fields()
                                get_all_fields = function(){
@@ -80,20 +82,16 @@ SklearnEstimator <- R6::R6Class(classname = "SklearnEstimator",
                                   #'
                                   #' @examples
                                   #' sklearn <- SklearnEstimator$new()
-                                  #' \dontrun{
                                   #' sklearn$fit()
-                                  #' }
                                   fit = function() {
-                                    stop("Needs to implement fit(X, y)")
+                                    message("Needs to implement fit(X, y)")
                                   },
                                   #' @description Dummy predict function
                                   #'
                                   #' @examples
-                                  #' \dontrun{
                                   #' sklearn$predict()
-                                  #' }
                                   predict = function(){
-                                    stop("Needs to implement predict(X, y)")
+                                    message("Needs to implement predict(X, y)")
                                     invisible(self)
                                   },
                                   #' @description Auxiliary function returning the type of the class e.g 'estimator'
