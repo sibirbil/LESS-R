@@ -1,2 +1,2 @@
 # LESS-R
-Learning in Subset Stacking (R version)
+Learning with Subset Stacking (R version)
