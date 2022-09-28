@@ -7,8 +7,10 @@ LESS is a supervised learning algorithm that is based on training many local est
 
 ## Installation
 
-`install.packages("less")`
-`library(less)`
+```
+install.packages("less")
+library(less)
+```
 
 ## Testing
 
