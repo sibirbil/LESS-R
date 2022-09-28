@@ -191,7 +191,7 @@ OutputCodeClassifier <- R6::R6Class(classname = "OutputCodeClassifier",
                                     ))
 #' @title LESSBinaryClassifier
 #'
-#' @description Auxiliary binary classifier for Learning with Subset Selection (LESS)
+#' @description Auxiliary binary classifier for Learning with Subset Stacking (LESS)
 #'
 #' @param frac fraction of total samples used for the number of neighbors (default is 0.05)
 #' @param n_neighbors number of neighbors (default is NULL)
@@ -401,7 +401,7 @@ LESSBinaryClassifier <- R6::R6Class(classname = "LESSBinaryClassifier",
 
 #' @title LESSClassifier
 #'
-#' @description Classifier for Learning with Subset Selection (LESS)
+#' @description Classifier for Learning with Subset Stacking (LESS)
 #'
 #' @param frac fraction of total samples used for the number of neighbors (default is 0.05)
 #' @param n_neighbors number of neighbors (default is NULL)
@@ -522,7 +522,9 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #'
                                 #' @examples
                                 #' data(iris)
-                                #' split_list <- train_test_split(iris, test_size =  0.3)
+                                #' set.seed(2022)
+                                #' shuffled_iris <- iris[sample(1:nrow(iris)),]
+                                #' split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3, random_state = 1)
                                 #' X_train <- split_list[[1]]
                                 #' X_test <- split_list[[2]]
                                 #' y_train <- split_list[[3]]
@@ -560,8 +562,6 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #' @return Predicted values of the given predictors
                                 #'
                                 #' @examples
-                                #' lessclassifier <- LESSClassifier$new()
-                                #' lessclassifier$fit(X_train, y_train)
                                 #' preds <- lessclassifier$predict(X_test)
                                 #' print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
                                 predict = function(X0){
@@ -572,6 +572,9 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                   private$strategy$predict(X0)
                                 },
                                 #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                #'
+                                #' @examples
+                                #' lessclassifier$get_estimator_type()
                                 get_estimator_type = function() {
                                   return(private$estimator_type)
                                 },
@@ -579,6 +582,9 @@ LESSClassifier <- R6::R6Class(classname = "LESSClassifier",
                                 #'
                                 #' @param random_state seed number to be set as random state
                                 #' @return self
+                                #'
+                                #' @examples
+                                #' lessclassifier$set_random_state(2022)
                                 set_random_state = function(random_state) {
                                   private$random_state <- random_state
                                   private$bclassifier$set_random_state(private$random_state)

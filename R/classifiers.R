@@ -93,6 +93,8 @@ DecisionTreeClassifier <- R6::R6Class(classname = "DecisionTreeClassifier",
                                          return(y_pred)
                                        },
                                        #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                       #' @examples
+                                       #' dt$get_estimator_type()
                                        get_estimator_type = function() {
                                          return(private$estimator_type)
                                        }
@@ -217,6 +219,9 @@ SVC <- R6::R6Class(classname = "SVC",
                        return(y_pred)
                      },
                      #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                     #'
+                     #' @examples
+                     #' svc$get_estimator_type()
                      get_estimator_type = function() {
                        return(private$estimator_type)
                      }
@@ -314,6 +319,9 @@ RandomForestClassifier <- R6::R6Class(classname = "RandomForestClassifier",
                                          predict(private$model, data)
                                        },
                                        #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                       #'
+                                       #' @examples
+                                       #' rf$get_estimator_type()
                                        get_estimator_type = function() {
                                          return(private$estimator_type)
                                        }
@@ -392,6 +400,9 @@ KNeighborsClassifier <- R6::R6Class(classname = "KNeighborsClassifier",
                                        return(factor(y_pred))
                                      },
                                      #' @description Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
+                                     #'
+                                     #' @examples
+                                     #' knc$get_estimator_type()
                                      get_estimator_type = function() {
                                        return(private$estimator_type)
                                      }

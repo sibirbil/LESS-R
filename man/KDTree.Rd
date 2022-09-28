@@ -16,7 +16,7 @@ Wrapper R6 Class of RANN::nn2 function that can be used for LESSRegressor and LE
 ## ------------------------------------------------
 
 data(abalone)
-kdt <- KDTree$new(abalone)
+kdt <- KDTree$new(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `KDTree$query`
@@ -55,7 +55,7 @@ Creates a new instance of R6 Class of KDTree
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-kdt <- KDTree$new(abalone)
+kdt <- KDTree$new(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 

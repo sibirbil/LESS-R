@@ -44,7 +44,7 @@ KMeans <- R6::R6Class(classname = "KMeans",
                         #' @examples
                         #' data(abalone)
                         #' km <- KMeans$new()
-                        #' km$fit(abalone)
+                        #' km$fit(abalone[1:100,])
                         fit = function(X){
                           set.seed(private$random_state)
                           private$model <- kmeans(X, centers = private$n_clusters, iter.max = private$max_iter, nstart = private$n_init)
@@ -108,7 +108,7 @@ HierarchicalClustering <- R6::R6Class(classname = "HierarchicalClustering",
                                         #' @examples
                                         #' data(abalone)
                                         #' hc <- HierarchicalClustering$new()
-                                        #' hc$fit(abalone)
+                                        #' hc$fit(abalone[1:100,])
                                         fit = function(X){
                                           private$model <- stats::hclust(dist(X), method = private$linkage)
                                           private$labels <- unname(cutree(private$model, k = private$n_clusters))

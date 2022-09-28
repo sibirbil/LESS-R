@@ -16,7 +16,7 @@ Wrapper R6 Class of stats::lm function that can be used for LESSRegressor and LE
 ## ------------------------------------------------
 
 data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -38,6 +38,12 @@ preds <- lr$fit(X_train, y_train)$predict(X_test)
 
 preds <- LinearRegression$new()$fit(X_train, y_train)$predict(X_test)
 print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "Prediction"))))))
+
+## ------------------------------------------------
+## Method `LinearRegression$get_estimator_type`
+## ------------------------------------------------
+
+lr$get_estimator_type()
 }
 \seealso{
 \code{\link[stats:lm]{stats::lm()}}
@@ -57,11 +63,11 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -89,7 +95,7 @@ Fitted R6 Class of LinearRegression
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-split_list <- train_test_split(abalone, test_size =  0.3)
+split_list <- train_test_split(abalone[1:100,], test_size =  0.3)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -146,6 +152,14 @@ print(head(matrix(c(y_test, preds), ncol = 2, dimnames = (list(NULL, c("True", "
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{LinearRegression$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lr$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

@@ -30,6 +30,5 @@ A vector consists of metric of the individual folds and the average metric over 
 Applies k-Fold cross validation to the given model on the given data
 }
 \examples{
-k_fold_cv(data = abalone, model = LESSRegressor$new(), k = 10)
-k_fold_cv(data = iris, model = LESSClassifier$new(), k = 3)
+k_fold_cv(data = iris, model = KNeighborsClassifier$new(), k = 3)
 }

@@ -46,6 +46,12 @@ preds <- dt$fit(X_train, y_train)$predict(X_test)
 
 preds <- DecisionTreeClassifier$new()$fit(X_train, y_train)$predict(X_test)
 print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `DecisionTreeClassifier$get_estimator_type`
+## ------------------------------------------------
+
+dt$get_estimator_type()
 }
 \seealso{
 \code{\link[rpart:rpart]{rpart::rpart()}}
@@ -66,11 +72,11 @@ print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_isFitted"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_isFitted'><code>less::SklearnEstimator$get_isFitted()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -204,6 +210,14 @@ print(caret::confusionMatrix(data=preds, reference = factor(y_test)))
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DecisionTreeClassifier$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{dt$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

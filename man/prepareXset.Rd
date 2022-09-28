@@ -15,3 +15,7 @@ A named dataframe which consists of X
 \description{
 Takes X dataset and convert it into a dataframe with column names (X_1, X_2 ...)
 }
+\examples{
+X <- matrix(1:20, nrow = 4)
+prepareXset(X)
+}

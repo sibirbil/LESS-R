@@ -11,7 +11,7 @@ Wrapper R6 Class of FNN::get.knnx function that can be used for LESSRegressor an
 }
 \details{
 The cover tree is O(n) space data structure which allows us to answer queries in the same O(log(n)) time as kd tree given a fixed intrinsic dimensionality.
-Templated code from \url{http://hunch.net/~jl/projects/cover_tree/cover_tree.html} is used.
+Templated code from \url{https://hunch.net/~jl/projects/cover_tree/cover_tree.html} is used.
 }
 \examples{
 
@@ -20,7 +20,7 @@ Templated code from \url{http://hunch.net/~jl/projects/cover_tree/cover_tree.htm
 ## ------------------------------------------------
 
 data(abalone)
-ct <- CoverTree$new(abalone)
+ct <- CoverTree$new(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `CoverTree$query`
@@ -59,7 +59,7 @@ Creates a new instance of R6 Class of CoverTree
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
-ct <- CoverTree$new(abalone)
+ct <- CoverTree$new(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 

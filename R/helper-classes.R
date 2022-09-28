@@ -32,10 +32,6 @@ StandardScaler <- R6::R6Class(classname = "StandardScaler",
                                 },
                                 fit_transform = function(X) {
                                   self$fit(X)$transform(X)
-                                },
-                                print = function() {
-                                  cat("Mean: ", private$mean, "\n")
-                                  cat("Standart Deviation: ", private$stdev, "\n")
                                 }
                               ))
 

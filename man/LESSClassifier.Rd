@@ -7,7 +7,7 @@
 R6 class of LESSClassifier
 }
 \description{
-Classifier for Learning with Subset Selection (LESS)
+Classifier for Learning with Subset Stacking (LESS)
 }
 \examples{
 
@@ -23,7 +23,9 @@ lessclassifier <- LESSClassifier$new(multiclass = "ovo")
 ## ------------------------------------------------
 
 data(iris)
-split_list <- train_test_split(iris, test_size =  0.3)
+set.seed(2022)
+shuffled_iris <- iris[sample(1:nrow(iris)),]
+split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3, random_state = 1)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -36,10 +38,20 @@ lessclassifier$fit(X_train, y_train)
 ## Method `LESSClassifier$predict`
 ## ------------------------------------------------
 
-lessclassifier <- LESSClassifier$new()
-lessclassifier$fit(X_train, y_train)
 preds <- lessclassifier$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
+
+## ------------------------------------------------
+## Method `LESSClassifier$get_estimator_type`
+## ------------------------------------------------
+
+lessclassifier$get_estimator_type()
+
+## ------------------------------------------------
+## Method `LESSClassifier$set_random_state`
+## ------------------------------------------------
+
+lessclassifier$set_random_state(2022)
 }
 \section{Super classes}{
 \code{\link[less:BaseEstimator]{less::BaseEstimator}} -> \code{\link[less:SklearnEstimator]{less::SklearnEstimator}} -> \code{\link[less:LESSBase]{less::LESSBase}} -> \code{LESSClassifier}
@@ -58,19 +70,19 @@ print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 \if{html}{\out{
 <details><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_d_normalize"><a href='../../less/html/LESSBase.html#method-LESSBase-get_d_normalize'><code>less::LESSBase$get_d_normalize()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_frac"><a href='../../less/html/LESSBase.html#method-LESSBase-get_frac'><code>less::LESSBase$get_frac()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_isFitted"><a href='../../less/html/LESSBase.html#method-LESSBase-get_isFitted'><code>less::LESSBase$get_isFitted()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_neighbors"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_neighbors'><code>less::LESSBase$get_n_neighbors()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_replications"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_replications'><code>less::LESSBase$get_n_replications()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_subsets"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_subsets'><code>less::LESSBase$get_n_subsets()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_random_state"><a href='../../less/html/LESSBase.html#method-LESSBase-get_random_state'><code>less::LESSBase$get_random_state()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_replications"><a href='../../less/html/LESSBase.html#method-LESSBase-get_replications'><code>less::LESSBase$get_replications()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_scaling"><a href='../../less/html/LESSBase.html#method-LESSBase-get_scaling'><code>less::LESSBase$get_scaling()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_val_size"><a href='../../less/html/LESSBase.html#method-LESSBase-get_val_size'><code>less::LESSBase$get_val_size()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="SklearnEstimator" data-id="get_type"><a href='../../less/html/SklearnEstimator.html#method-SklearnEstimator-get_type'><code>less::SklearnEstimator$get_type()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_d_normalize"><a href='../../less/html/LESSBase.html#method-LESSBase-get_d_normalize'><code>less::LESSBase$get_d_normalize()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_frac"><a href='../../less/html/LESSBase.html#method-LESSBase-get_frac'><code>less::LESSBase$get_frac()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_isFitted"><a href='../../less/html/LESSBase.html#method-LESSBase-get_isFitted'><code>less::LESSBase$get_isFitted()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_neighbors"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_neighbors'><code>less::LESSBase$get_n_neighbors()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_replications"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_replications'><code>less::LESSBase$get_n_replications()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_n_subsets"><a href='../../less/html/LESSBase.html#method-LESSBase-get_n_subsets'><code>less::LESSBase$get_n_subsets()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_random_state"><a href='../../less/html/LESSBase.html#method-LESSBase-get_random_state'><code>less::LESSBase$get_random_state()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_replications"><a href='../../less/html/LESSBase.html#method-LESSBase-get_replications'><code>less::LESSBase$get_replications()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_scaling"><a href='../../less/html/LESSBase.html#method-LESSBase-get_scaling'><code>less::LESSBase$get_scaling()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="LESSBase" data-id="get_val_size"><a href='../../less/html/LESSBase.html#method-LESSBase-get_val_size'><code>less::LESSBase$get_val_size()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -169,7 +181,9 @@ Fitted R6 Class of LESSClassifier
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(iris)
-split_list <- train_test_split(iris, test_size =  0.3)
+set.seed(2022)
+shuffled_iris <- iris[sample(1:nrow(iris)),]
+split_list <- train_test_split(shuffled_iris[1:10,], test_size =  0.3, random_state = 1)
 X_train <- split_list[[1]]
 X_test <- split_list[[2]]
 y_train <- split_list[[3]]
@@ -204,9 +218,7 @@ Predicted values of the given predictors
 }
 \subsection{Examples}{
 \if{html}{\out{<div class="r example copy">}}
-\preformatted{lessclassifier <- LESSClassifier$new()
-lessclassifier$fit(X_train, y_train)
-preds <- lessclassifier$predict(X_test)
+\preformatted{preds <- lessclassifier$predict(X_test)
 print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 }
 \if{html}{\out{</div>}}
@@ -221,6 +233,14 @@ print(caret::confusionMatrix(data=factor(preds), reference = factor(y_test)))
 Auxiliary function returning the estimator type e.g 'regressor', 'classifier'
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{LESSClassifier$get_estimator_type()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lessclassifier$get_estimator_type()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }
@@ -243,6 +263,14 @@ Auxiliary function that sets random state attribute of the self class
 \subsection{Returns}{
 self
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{lessclassifier$set_random_state(2022)
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-LESSClassifier-clone"></a>}}

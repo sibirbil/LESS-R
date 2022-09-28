@@ -9,6 +9,33 @@ R6 Class of SklearnEstimator
 \description{
 A dummy base R6 class that includes fit, predict functions for estimators
 }
+\examples{
+
+## ------------------------------------------------
+## Method `SklearnEstimator$fit`
+## ------------------------------------------------
+
+sklearn <- SklearnEstimator$new()
+sklearn$fit()
+
+## ------------------------------------------------
+## Method `SklearnEstimator$predict`
+## ------------------------------------------------
+
+sklearn$predict()
+
+## ------------------------------------------------
+## Method `SklearnEstimator$get_type`
+## ------------------------------------------------
+
+sklearn$get_type()
+
+## ------------------------------------------------
+## Method `SklearnEstimator$get_isFitted`
+## ------------------------------------------------
+
+sklearn$get_isFitted()
+}
 \section{Super class}{
 \code{\link[less:BaseEstimator]{less::BaseEstimator}} -> \code{SklearnEstimator}
 }
@@ -25,9 +52,9 @@ A dummy base R6 class that includes fit, predict functions for estimators
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -40,6 +67,15 @@ Dummy fit function
 \if{html}{\out{<div class="r">}}\preformatted{SklearnEstimator$fit()}\if{html}{\out{</div>}}
 }
 
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{sklearn <- SklearnEstimator$new()
+sklearn$fit()
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SklearnEstimator-predict"></a>}}
@@ -48,6 +84,14 @@ Dummy fit function
 Dummy predict function
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SklearnEstimator$predict()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{sklearn$predict()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }
@@ -60,6 +104,14 @@ Auxiliary function returning the type of the class e.g 'estimator'
 \if{html}{\out{<div class="r">}}\preformatted{SklearnEstimator$get_type()}\if{html}{\out{</div>}}
 }
 
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{sklearn$get_type()
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-SklearnEstimator-get_isFitted"></a>}}
@@ -68,6 +120,14 @@ Auxiliary function returning the type of the class e.g 'estimator'
 Auxiliary function returning the isFitted flag
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{SklearnEstimator$get_isFitted()}\if{html}{\out{</div>}}
+}
+
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{sklearn$get_isFitted()
+}
+\if{html}{\out{</div>}}
+
 }
 
 }

@@ -55,6 +55,11 @@ laplacian <- function(data, center, coeff=0.01){
 #'
 #' @return A named dataframe which consists of X and y combined
 #' @export
+#'
+#' @examples
+#' X <- matrix(1:20, nrow = 4)
+#' y <- c(5:8)
+#' prepareDataset(X, y)
 prepareDataset = function(X, y) {
   merged_data <- cbind.data.frame(y, X)
   df <- as.data.frame(merged_data)
@@ -84,6 +89,10 @@ prepareDataset = function(X, y) {
 #'
 #' @return A named dataframe which consists of X
 #' @export
+#'
+#' @examples
+#' X <- matrix(1:20, nrow = 4)
+#' prepareXset(X)
 prepareXset = function(X) {
   df <- as.data.frame(X)
   colX <- list()
@@ -189,7 +198,6 @@ train_test_split = function(data, test_size=0.3, random_state=NULL, y_index = nc
 #' @param estimator An estimator with is_fitted attribute
 #'
 #' @return TRUE if the estimator is fitted, FALSE is not
-#' @export
 check_is_fitted = function(estimator){
   if(is.null(estimator$get_type())){
     stop("\tGiven estimator is not an estimator instance.")
@@ -297,30 +305,9 @@ get_functions = function(){
   clustering_list <- c("HierarchicalClustering", "KMeans")
   tree_list <- c("CoverTree", "KDTree")
   helper_function_list <- c("laplacian", "rbf", "train_test_split", "k_fold_cv")
-  cat("Regressors within LESS Package:", "\n")
-  for(reg in regressor_list){
-    cat("-", reg, "\n")
-  }
-  cat("\n")
-  cat("Classifiers within LESS Package:", "\n")
-  for(cls in classifier_list){
-    cat("-", cls, "\n")
-  }
-  cat("\n")
-  cat("Clustering Methods within LESS Package:", "\n")
-  for(clust in clustering_list){
-    cat("-", clust, "\n")
-  }
-  cat("\n")
-  cat("Tree Functions within LESS Package:", "\n")
-  for(tree in tree_list){
-    cat("-", tree, "\n")
-  }
-  cat("\n")
-  cat("Helper functions within LESS Package:", "\n")
-  for(help in helper_function_list){
-    cat("-", help, "\n")
-  }
+  return(list("Regressors" = regressor_list, "Classifiers" = classifier_list,
+              "Clustering Methods" = clustering_list, "Tree Methods" = tree_list,
+              "Helper Functions" = helper_function_list))
 }
 
 #' @title k-Fold Cross Validation
@@ -338,8 +325,7 @@ get_functions = function(){
 #' @export
 #'
 #' @examples
-#' k_fold_cv(data = abalone, model = LESSRegressor$new(), k = 10)
-#' k_fold_cv(data = iris, model = LESSClassifier$new(), k = 3)
+#' k_fold_cv(data = iris, model = KNeighborsClassifier$new(), k = 3)
 k_fold_cv = function(data = NULL, model = NULL, random_state = NULL, k = 5, y_index = ncol(data)){
   if(is.null(model) | is.null(data)){
     stop("The given data or model is NULL.")

@@ -17,7 +17,7 @@ KDTree <- R6::R6Class(classname = "KDTree",
                         #'
                         #' @examples
                         #' data(abalone)
-                        #' kdt <- KDTree$new(abalone)
+                        #' kdt <- KDTree$new(abalone[1:100,])
                         initialize = function(X = NULL) {
                           private$X = X
                         },
@@ -48,7 +48,7 @@ KDTree <- R6::R6Class(classname = "KDTree",
 #' @description Wrapper R6 Class of FNN::get.knnx function that can be used for LESSRegressor and LESSClassifier
 #'
 #' @details The cover tree is O(n) space data structure which allows us to answer queries in the same O(log(n)) time as kd tree given a fixed intrinsic dimensionality.
-#' Templated code from \url{http://hunch.net/~jl/projects/cover_tree/cover_tree.html} is used.
+#' Templated code from \url{https://hunch.net/~jl/projects/cover_tree/cover_tree.html} is used.
 #'
 #' @param X An \strong{M x d} data.frame or matrix, where each of the \strong{M} rows is a point or a (column) vector (where \strong{d=1}).
 #'
@@ -65,7 +65,7 @@ CoverTree <- R6::R6Class(classname = "CoverTree",
                            #'
                            #' @examples
                            #' data(abalone)
-                           #' ct <- CoverTree$new(abalone)
+                           #' ct <- CoverTree$new(abalone[1:100,])
                            initialize = function(X = NULL) {
                              private$X = X
                            },

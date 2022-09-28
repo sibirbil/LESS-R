@@ -25,7 +25,7 @@ hc <- HierarchicalClustering$new(n_clusters = 10, linkage = "complete")
 
 data(abalone)
 hc <- HierarchicalClustering$new()
-hc$fit(abalone)
+hc$fit(abalone[1:100,])
 
 ## ------------------------------------------------
 ## Method `HierarchicalClustering$get_cluster_centers`
@@ -58,9 +58,9 @@ print(hc$get_labels())
 \if{html}{\out{
 <details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></li>
-<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_all_fields"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_all_fields'><code>less::BaseEstimator$get_all_fields()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="get_attributes"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-get_attributes'><code>less::BaseEstimator$get_attributes()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="less" data-topic="BaseEstimator" data-id="set_random_state"><a href='../../less/html/BaseEstimator.html#method-BaseEstimator-set_random_state'><code>less::BaseEstimator$set_random_state()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -118,7 +118,7 @@ Fitted R6 class of HierarchicalClustering() that has 'labels' attribute
 \if{html}{\out{<div class="r example copy">}}
 \preformatted{data(abalone)
 hc <- HierarchicalClustering$new()
-hc$fit(abalone)
+hc$fit(abalone[1:100,])
 }
 \if{html}{\out{</div>}}
 
