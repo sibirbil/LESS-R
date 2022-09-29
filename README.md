@@ -73,7 +73,7 @@ Default implementation of LESS uses Euclidean distances with radial basis functi
 
 ## Python Version
 
-Python implementation of LESS is available in (another repository)[https://github.com/sibirbil/LESS].
+Python implementation of LESS is available in [another repository](https://github.com/sibirbil/LESS).
 
 ## Citation
 
