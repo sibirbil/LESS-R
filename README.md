@@ -71,6 +71,10 @@ Our **two-part** [tutorial on Colab](https://colab.research.google.com/drive/1UE
 
 Default implementation of LESS uses Euclidean distances with radial basis function. Therefore, it is a good idea to scale the input data before fitting. This can be done by setting the parameter `scaling` in `LESSRegressor` or `LESSClassifier` to `TRUE` (this is the default value)
 
+## Python Version
+
+Python implementation of LESS is available in (another repository)[https://github.com/sibirbil/LESS].
+
 ## Citation
 
 Citation for our software can be reached by:
